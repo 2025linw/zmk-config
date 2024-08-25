@@ -1,0 +1,278 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// Basic Layers
+#define BASE 0
+#define LOWER 1
+#define RAISE 3
+#define BOTH 4
+
+// Specialty Layers
+#define BT 5
+#define MEDIA 2
+
+// Mod Keys
+#define SHFT LSHFT
+#define CTRL LCTRL
+
+// ALT/OPT Keys (Win/Mac)
+#define ALT LALT
+#define OPT LALT
+
+// OS Key
+#define GUI LGUI
+
+// Volume Key
+#define VOL_UP C_VOL_UP
+#define VOL_DN C_VOL_DN
+
+// Macro for bluetooth options
+#define BTSEL(num) &bt BT_SEL num
+
+/ {
+    behaviors {
+        td_cc: tap_dance_command_control {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp GUI>, <&kp CTRL>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        both_layer {
+            if-layers = <LOWER RAISE>;
+            then-layer = <BOTH>;
+        };
+    };
+
+    macros {
+        move_wind: move_window {
+            label = "Move Window";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp CTRL>
+                , <&macro_press &kp OPT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp OPT>
+                , <&macro_release &kp CTRL>
+                ;
+        };
+
+        selct_line: select_line {
+            label = "VSCode Select Lines";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp SHFT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp SHFT>
+                ;
+        };
+
+        multln_cur: multiline_cursor {
+            label = "VSCode Multiline Cursor";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp GUI>
+                , <&macro_press &kp OPT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp OPT>
+                , <&macro_release &kp GUI>
+                ;
+        };
+
+        move_line: move_line {
+            label = "VSCode Move Line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp OPT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp OPT>
+                ;
+        };
+
+        cpymv_line: copy_move_line {
+            label = "VSCode Copy Move Line";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp SHFT>
+                , <&macro_press &kp OPT>
+                , <&macro_pause_for_release>
+                , <&macro_release &kp OPT>
+                , <&macro_release &kp SHFT>
+                ;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        // Icon Guide
+        // ⍂: None
+        // ⍇: Transparent
+
+        // ⍗: Lower Layer
+        // ⍐: Raise Layer
+
+        // ⌸: Home Keys (Bump)
+        // ⌼: Held Keys
+
+        // 0. BASE: Main
+        base_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │           │           │           │           │           │           │       │           │           │           │           │           │           │
+            //  │ ESC       │ Q         │ W         │ E         │ R         │ T         │       │ Y         │ U         │ I         │ O         │ P         │ BKSPC     │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │ :         │ "         │
+            //  │ TAB       │ A         │ S         │ D         │ F         │ G         │       │ H         │ J         │ K         │ L         │ ;         │ '         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │           │           │       │           │           │ <         │ >         │ ?         │           │
+            //  │ SHIFT     | Z         │ X         │ C         │ V         │ B         │       │ N         │ M         │ ,         │ .         │ /         │ SHIFT     │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │           │ Lower     │           │       │           │ Raise     │           │
+            //                                      │ CMD/CTRL  │ ⍗         │ SPACE     │       │ ENTER     │ ⍐         │ OPT       │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &kp ESC    	&kp Q      	&kp W      	&kp E      	&kp R      	&kp T       		&kp Y      	&kp U      	&kp I      	&kp O      	&kp P      	&kp BSPC
+                &kp TAB    	&kp A      	&kp S      	&kp D      	&kp F       &kp G           	&kp H      	&kp J       &kp K      	&kp L      	&kp SEMI   	&kp SQT
+                &kp SHFT  	&kp Z      	&kp X      	&kp C      	&kp V      	&kp B           	&kp N      	&kp M      	&kp COMMA  	&kp DOT    	&kp FSLH   	&kp SHFT
+                                                    &td_cc      &mo LOWER  	&kp SPACE       	&kp ENTER  	&mo RAISE  	&kp OPT
+            >;
+        };
+
+        // 1. LOWER: Navigation/System Shortcuts
+        lower_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │ ESC       │           │           │           │           │           │       │           │           │           │           │           │ BKSPC     │
+            //  │ ⍇         │ ⍂         │ ⍂         │ Move Wind │ Media Ctl │ ⍂         │       │ ⍂         │ HOME      │ ▲         │ END       │ ⍂         │ ⍇         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ TAB       │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │           │           │
+            //  | ⍇         │ ⍂         │ ⍂         │ Move Line │ Sel Line  │ ⍂         │       │ ⍂         │ ◀         │ ▼         │ ▶         │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ SHIFT     │           │           │           │           │           │       │           │           │           │           │           │ SHIFT     │
+            //  │ ⍇         │ ⍂         │ ⍂         │ CpMv Line │ MulLn Cur │ ⍂         │       │ ⍂         │ PG UP     │ ⍂         │ PG DN     │ ⍂         │ ⍇         │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │ CMD/CTRL  │ Lower     │ SPACE     │       │ ENTER     │ Raise     │ OPT       │
+            //                                      │ ⍇         │ ⌼         │ ⍇         │       │ ⍇         │ ⍇         │ ⍇         │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &trans   	&none       &none   	&mo MEDIA	&move_wind  &none       	    &none  	    &kp HOME  	&kp UP	    &kp END     &none   	&trans
+                &trans  	&none       &none       &move_line  &selct_line &none               &none  	    &kp LEFT    &kp DOWN  	&kp RIGHT  	&none  	    &none
+                &trans  	&none       &none       &cpymv_line &multln_cur &none               &none  	    &kp PG_UP   &none   	&kp PG_DN   &none   	&trans
+                                                    &trans  	&trans      &trans             	&trans  	&trans      &trans
+            >;
+        };
+
+        // 2. MEDIA: Media Layer
+        lower_media_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │ ESC       │           │           │           │           │           │       │           │           │           │           │           │ BKSPC     │
+            //  │ ⍇         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ Vol ▲     │ ⍂         │ ⍂         │ ⍇         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ TAB       │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │           │           │
+            //  │ ⍇         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ∣◀        │ ▶/∣∣      │ ▶∣        │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ SHIFT     │ Media Ctl │           │           │           │           │       │           │           │           │           │           │ SHIFT     │
+            //  │ ⍇         │ ⌼         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ Vol Mute  │ Vol ▼     │ ⍂         │ ⍂         │ ⍇         │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │ CMD/CTRL  │ Lower     │ SPACE     │       │ ENTER     │ Raise     │ OPT       │
+            //                                      │ ⍇         │ ⌼         │ ⍇         │       │ ⍇         │ ⍇         │ ⍇         │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &trans	    &none       &none       &none       &none       &none               &none       &none       &kp VOL_UP  &none       &none       &trans
+                &trans      &none       &none       &none       &none       &trans              &none   	&kp C_PREV  &kp C_PP    &kp C_NEXT  &none       &none
+                &trans      &none      	&none      	&none		&none       &none               &none  	    &kp C_MUTE  &kp VOL_DN  &none      	&none      	&trans
+                                                    &trans		&trans     	&trans            	&trans    	&trans      &trans
+            >;
+        };
+
+        // 3. RAISE: Symbols
+        raise_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │ ESC       │           │           │           │           │           │       │           │           │           │           │           │ BKSPC     │
+            //  │ ⍇         │ !         │ @         │ #         │ $         │ %         │       │ ^         │ &         │ *         │ (         │ )         │ ⍇         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ TAB       │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │           │ |         │
+            //  │ ⍇         │ 1         │ 2         │ 3         │ 4         | 5         │       │ 6         │ 7         │ 8         │ 9         │ 0         │ \         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │ SHIFT     │           │           │           │           │ ~         │       │           │           │           │           │           │ SHIFT     │
+            //  │ ⍇         │ _         │ -         │ +         │ =         │ `         │       │ ⍂         │ [         │ ]         │ {         │ }         │ ⍇         │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │ CMD/CTRL  │ Lower     │ SPACE     │       │ ENTER     │ Raise     │ OPT       │
+            //                                      │ ⍇         │ ⍇         │ ⍇         │       │ ⍇         │ ⌼         │ ⍇         │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT	        &kp CARET   &kp AMPS   	&kp ASTRK   &kp LPAR  	&kp RPAR    &trans
+                &trans      &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_N4   &kp KP_N5      	    &kp KP_N6   &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_N0   &kp BSLH
+                &trans  	&kp UNDER 	&kp MINUS   &kp PLUS    &kp EQUAL   &kp GRAVE	        &none   	&kp LBKT    &kp RBKT  	&kp LBRC  	&kp RBRC   	&trans
+                                                    &trans 	    &trans      &trans             	&trans  	&trans      &trans
+            >;
+        };
+
+        // 4. BOTH: Keyboard Settings
+        both_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │           │           │           │           │           │           │       │           │           │           │           │           │           │
+            //  │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │           │           │
+            //  │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ BT Layer  │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │           │           │       │           │           │           │           │           │           │
+            //  │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │           │ Lower     │           │       │           │ Raise     │           │
+            //                                      │ ⍂         │ ⌼         │ ⍂         │       │ ⍂         │ ⌼         │ ⍂         │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &none 	    &none       &none       &none       &none       &none               &none       &none       &none       &none       &none       &none
+                &none		&none       &none       &none       &mo BT      &none               &none   	&none       &none       &none       &none       &none
+                &none       &none      	&none      	&none      	&none       &none               &none  	    &none       &none      	&none      	&none      	&none
+                                                    &none     	&trans     	&none             	&none     	&trans      &none
+            >;
+        };
+
+        // 5. BT: Bluetooth Selection Layer
+        both_bt_layer {
+            //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
+            //  │           │           │           │           │           │           │       │           │           │           │           │           │           │
+            //  │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │ BT  ⌸     │           │       │           │     ⌸     │           │           │           │           │
+            //  │ BT CLEAR  │ BT 2      │ BT 1      │ BT 0      │ ⌼         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
+            //  │           │           │           │           │           │           │       │           │           │           │           │           │           │
+            //  │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │
+            //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
+            //                                      │           │           │           │       │           │           │           │
+            //                                      │ ⍂         │ ⌼         │ ⍂         │       │ ⍂         │ ⌼         │ ⍂         │
+            //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
+
+            bindings = <
+                &none 	    &none       &none       &none       &none       &none               &none       &none       &none       &none       &none       &none
+                &bt BT_CLR  BTSEL(2)    BTSEL(1)    BTSEL(0)	&trans      &none               &none   	&none       &none       &none       &none       &none
+                &none       &none      	&none      	&none		&none       &none               &none  	    &none       &none      	&none      	&none      	&none
+                                                    &none		&trans     	&none             	&none     	&trans      &none
+            >;
+        };
+    };
+};
