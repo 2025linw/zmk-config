@@ -52,7 +52,6 @@
 
     macros {
         move_wind: move_window {
-            label = "Move Window";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -65,7 +64,6 @@
         };
 
         move_line: move_line {
-            label = "VSCode Move Line";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -76,7 +74,6 @@
         };
 
         cpymv_line: copy_move_line {
-            label = "VSCode Copy Move Line";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
