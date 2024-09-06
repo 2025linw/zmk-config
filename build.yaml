@@ -21,18 +21,18 @@ include:
   # This is for the Corne MX
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne MX"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne-MX"
     artifact-name: corne_mx_left
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view
-    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne MX"
+    cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne-MX"
     artifact-name: corne_mx_right
   # # This is for the Corne LP
   # - board: nice_nano_v2
   #   shield: corne_left nice_view_adapter nice_view
-  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne LP"
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne-LP"
   #   artifact-name: corne_lp_left
   # - board: nice_nano_v2
   #   shield: corne_right nice_view_adapter nice_view
-  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne LP"
+  #   cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME="Corne-LP"
   #   artifact-name: corne_lp_right
