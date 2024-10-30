@@ -86,8 +86,7 @@
                 , <&macro_press &kp OPT>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp OPT>
-                , <&macro_release &kp CTRL>
-                ;
+                , <&macro_release &kp CTRL>;
         };
 
         move_line: move_line {
@@ -96,8 +95,7 @@
             bindings
                 = <&macro_press &kp OPT>
                 , <&macro_pause_for_release>
-                , <&macro_release &kp OPT>
-                ;
+                , <&macro_release &kp OPT>;
         };
 
         cpymv_line: copy_move_line {
@@ -108,8 +106,7 @@
                 , <&macro_press &kp OPT>
                 , <&macro_pause_for_release>
                 , <&macro_release &kp OPT>
-                , <&macro_release &kp SHFT>
-                ;
+                , <&macro_release &kp SHFT>;
         };
     };
 
