@@ -17,13 +17,14 @@
 // Specialty Layers
 #define BT 4
 
-// Mod Keys
+// Shift and Control Key Shortened
 #define SHFT LSHFT
 #define CTRL LCTRL
 
 // ALT/OPT Keys (Win/Mac)
 #define ALT LALT
 #define OPT LALT
+#define MOD_OPT MOD_LALT
 
 // OS Key
 #define GUI LGUI
@@ -38,6 +39,32 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp GUI>, <&kp CTRL>;
+        };
+
+        mm_pgup: mod_morph_up_pgup {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp UP>, <&kp PAGE_UP>;
+            mods = <(MOD_OPT)>;
+        };
+
+        mm_pgdn: mod_morph_down_pgdn {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
+            mods = <(MOD_OPT)>;
+        };
+        mm_home: mod_morph_left_home {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT>, <&kp HOME>;
+            mods = <(MOD_OPT)>;
+        };
+        mm_end: mod_morph_right_end {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT>, <&kp END>;
+            mods = <(MOD_OPT)>;
         };
     };
 
@@ -157,7 +184,7 @@
             //  │ ⍇         │ 1         │ 2         │ 3         │ 4         | 5         │       │ 6         │ 7         │ 8         │ 9         │ 0         │ \         │
             //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //  │ SHIFT     │           │           │           │           │ ~         │       │           │           │           │           │           │ SHIFT     │
-            //  │ ⍇         │ _         │ -         │ +         │ =         │ `         │       │ ⍂         │ [         │ ]         │ {         │ }         │ ⍇         │
+            //  │ ⍇         │ _         │ -         │ +         │ =         │ `         │       │ ⍂         │ [         │ {         │ }         │ ]         │ ⍇         │
             //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
             //                                      │ CMD/CTRL  │ Lower     │ SPACE     │       │ ENTER     │ Raise     │ OPT       │
             //                                      │ ⍇         │ ⍇         │ ⍇         │       │ ⍇         │ ⌼         │ ⍇         │
