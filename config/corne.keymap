@@ -41,30 +41,32 @@
             bindings = <&kp GUI>, <&kp CTRL>;
         };
 
-        mm_pgup: mod_morph_up_pgup {
-            compatible = "zmk,behavior-mod-morph";
+        td_up_pgup: tap_dance_up_pgup {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
-            mods = <(MOD_OPT)>;
         };
 
-        mm_pgdn: mod_morph_down_pgdn {
-            compatible = "zmk,behavior-mod-morph";
+        td_down_pgdn: tap_dance_down_pgdn {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
-            mods = <(MOD_OPT)>;
         };
-        mm_home: mod_morph_left_home {
-            compatible = "zmk,behavior-mod-morph";
+
+        td_left_home: tap_dance_left_home {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp LEFT>, <&kp HOME>;
-            mods = <(MOD_OPT)>;
         };
-        mm_end: mod_morph_right_end {
-            compatible = "zmk,behavior-mod-morph";
+
+        td_right_end: tap_dance_right_end {
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&kp RIGHT>, <&kp END>;
-            mods = <(MOD_OPT)>;
         };
     };
 
@@ -190,7 +192,7 @@
             bindings = <
                 &trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT	        &kp CARET   &kp AMPS   	&kp ASTRK   &kp LPAR  	&kp RPAR    &trans
                 &trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      	    &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp BSLH
-                &trans  	&kp UNDER 	&kp MINUS   &kp PLUS    &kp EQUAL   &kp GRAVE	        &none   	&kp LBKT    &kp RBKT  	&kp LBRC  	&kp RBRC   	&trans
+                &trans  	&kp UNDER 	&kp MINUS   &kp PLUS    &kp EQUAL   &kp GRAVE	        &none   	&kp LBKT    &kp LBRC  	&kp RBRC   	&kp RBKT  	&trans
                                                     &trans 	    &trans      &trans             	&trans  	&trans      &trans
             >;
         };
