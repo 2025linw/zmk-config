@@ -34,39 +34,39 @@
 
 / {
     behaviors {
-        td_cc: tap_dance_command_control {
+        td_c_c: tap_dance_command_control {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp GUI>, <&kp CTRL>;
         };
 
-        td_up_pgup: tap_dance_up_pgup {
+        td_u_p: tap_dance_up_pgup {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
         };
 
-        td_down_pgdn: tap_dance_down_pgdn {
+        td_d_p: tap_dance_down_pgdn {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
         };
 
-        td_left_home: tap_dance_left_home {
+        td_l_h: tap_dance_left_home {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LEFT>, <&kp HOME>;
         };
 
-        td_right_end: tap_dance_right_end {
+        td_r_e: tap_dance_right_end {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp RIGHT>, <&kp END>;
+            bindings = <&kp right>, <&kp END>;
         };
     };
 
@@ -153,22 +153,22 @@
         lower_layer {
             //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //  │ ESC       │           │           │           │           │           │       │           │           │           │           │           │ BKSPC     │
-            //  │ ⍇         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ HOME      │ ▲         │ END       │ ⍂         │ ⍇         │
+            //  │ ⍇         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ▲/PG UP   │ ⍂         │ ⍂         │ ⍇         │
             //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //  │ TAB       │           │           │           │     ⌸     │           │       │           │     ⌸     │           │           │           │           │
-            //  | ⍇         │ ⍂         │ ⍂         │ Move Line │ Move Wind │ ⍂         │       │ ⍂         │ ◀         │ ▼         │ ▶         │ ⍂         │ ⍂         │
+            //  | ⍇         │ ⍂         │ ⍂         │ Move Line │ Move Wind │ ⍂         │       │ ⍂         │ ◀/HOME    │ ▼/PG DN   │ ▶/END     │ ⍂         │ ⍂         │
             //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //  │ SHIFT     │           │           │           │           │           │       │           │           │           │           │           │ SHIFT     │
-            //  │ ⍇         │ ⍂         │ ⍂         │ CpMv Line │ ⍂         │ ⍂         │       │ ⍂         │ PG UP     │ ⍂         │ PG DN     │ ⍂         │ ⍇         │
+            //  │ ⍇         │ ⍂         │ ⍂         │ CpMv Line │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍇         │
             //  ╰───────────┴───────────┴───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┴───────────┴───────────╯
             //                                      │ CMD/CTRL  │ Lower     │ SPACE     │       │ ENTER     │ Raise     │ OPT       │
             //                                      │ ⍇         │ ⌼         │ ⍇         │       │ ⍇         │ ⍇         │ ⍇         │
             //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
 
             bindings = <
-                &trans   	&none       &none   	&none 	    &none       &none       	    &none  	    &kp HOME  	&kp UP	    &kp END     &none   	&trans
-                &trans  	&none       &none       &move_line  &move_wind  &none               &none  	    &kp LEFT    &kp DOWN  	&kp RIGHT  	&none  	    &none
-                &trans  	&none       &none       &cpymv_line &none       &none               &none  	    &kp PG_UP   &none   	&kp PG_DN   &none   	&trans
+                &trans   	&none       &none   	&none 	    &none       &none       	    &none  	    &none   	&td_u_p	    &none   	&none   	&trans
+                &trans  	&none       &none       &move_line  &move_wind  &none               &none  	    &td_l_h     &td_d_p  	&td_r_e  	&none  	    &none
+                &trans  	&none       &none       &cpymv_line &none       &none               &none  	    &none   	&none   	&none   	&none   	&trans
                                                     &trans  	&trans      &trans             	&trans  	&trans      &trans
             >;
         };
