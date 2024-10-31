@@ -298,7 +298,7 @@
 
             bindings = <
                 &none 	    &none       &none       &none       &none       &none               &none       &none       &none       &none       &none       &none
-                &none       &none       &none       &trans      &none       &none               &none       &to MAC     &to WIN     &none       &none       &none
+                &none       &none       &none       &trans      &none       &none               &none       &to MAC     &tog WIN    &none       &none       &none
                 &none       &none      	&none      	&none		&none       &none               &none  	    &none       &none      	&none      	&none      	&none
                                                     &none		&trans     	&none             	&none     	&trans      &none
             >;
