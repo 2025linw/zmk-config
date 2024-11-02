@@ -54,28 +54,28 @@
         td_u_p: tap_dance_up_pgup {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp UP>, <&kp PAGE_UP>;
         };
 
         td_d_p: tap_dance_down_pgdn {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp DOWN>, <&kp PAGE_DOWN>;
         };
 
         td_l_h: tap_dance_left_home {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp LEFT>, <&kp HOME>;
         };
 
         td_r_e: tap_dance_right_end {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <50>;
             bindings = <&kp RIGHT>, <&kp END>;
         };
     };
