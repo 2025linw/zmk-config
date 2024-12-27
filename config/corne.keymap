@@ -133,10 +133,10 @@
         lower_layer {
             //  ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //  │ ESC       │           │           │           │           │           │       │           │           │           │           │           │ BKSPC     │
-            //  │ ⎕         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ▲/PG UP   │ ⍂         │ ⍂         │ ⎕         │
+            //  │ ⎕         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ▲         │ ⍂         │ ⍂         │ ⎕         │
             //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //  │ TAB       │           │           │           │     ⍞     │           │       │           │     ⍞     │           │           │           │           │
-            //  | ⎕         │ ⍂         │ ⍂         │ Move Line │ Move Wind │ ⍂         │       │ ⍂         │ ◀/HOME    │ ▼/PG DN   │ ▶/END     │ ⍂         │ ⍂         │
+            //  | ⎕         │ ⍂         │ ⍂         │ Move Line │ Move Wind │ ⍂         │       │ ⍂         │ ◀         │ ▼         │ ▶         │ ⍂         │ ⍂         │
             //  ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //  │ SHIFT     │           │           │           │           │           │       │           │           │           │           │           │ SHIFT     │
             //  │ ⎕         │ ⍂         │ ⍂         │ CpMv Line │ ⍂         │ ⍂         │       │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⍂         │ ⎕         │
@@ -146,8 +146,8 @@
             //                                      ╰───────────┴───────────┴───────────╯       ╰───────────┴───────────┴───────────╯
 
             bindings = <
-                &trans   	&none       &none   	&none 	    &none       &none       	    &none  	    &none   	&td_u_p	    &none   	&none   	&trans
-                &trans  	&none       &none       &move_line  &move_wind  &none               &none  	    &td_l_h     &td_d_p  	&td_r_e  	&none  	    &none
+                &trans   	&none       &none   	&none 	    &none       &none       	    &none  	    &none   	&kp UP	    &none   	&none   	&trans
+                &trans  	&none       &none       &move_line  &move_wind  &none               &none  	    &kp LEFT    &kp DOWN  	&kp RIGHT  	&none  	    &none
                 &trans  	&none       &none       &cpymv_line &none       &none               &none  	    &none   	&none   	&none   	&none   	&trans
                                                     &trans  	&trans      &trans             	&trans  	&trans      &trans
             >;
