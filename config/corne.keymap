@@ -59,15 +59,6 @@
 		};
 	};
 
-	// conditional_layers {
-	// 	compatible = "zmk,conditional-layers";
-
-	// 	both_layer {
-	// 		if-layers = <LOWER UPPER>;
-	// 		then-layer = <BOTH>;
-	// 	};
-	// };
-
 	combos {
 		compatible = "zmk,combos";
 		combo_jk_esc {
@@ -111,18 +102,18 @@
 		};
 	};
 
+	// Icon Guide
+	// ⍂: None
+	// ⎕: Transparent
+	// ⌻: Held Keys
+
+	// ⍞: Home Key
+	// ⍗: Lower Layer Key
+	// ⍐: Upper Layer Key
+	// ⌺: Function Layer Key
 	keymap {
 		compatible = "zmk,keymap";
 
-		// Icon Guide
-		// ⍂: None
-		// ⎕: Transparent
-		// ⌻: Held Keys
-
-		// ⍞: Home Key
-		// ⍗: Lower Layer Key
-		// ⍐: Upper Layer Key
-		// ⌺: Function Layer Key
 
 		// 0. BASE: Base Layer
 		default_layer {
@@ -138,10 +129,11 @@
 				&sk SHFT  	&kp Z      	&kp X      	&kp C      	&kp V      	&kp B           	&kp N      	&kp M      	&kp COMMA  	&kp DOT    	&kp FSLH   	&sl FUNCT
 			//├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
 			//│  Ctrl     			  │  Enter                │  Tab                ⍗ │       │  BSpc               ⍐ │  Space                │  Shift                │
-				&sk CTRL    			MTAP(GUI, ENTER) 		LTAP(LOWER, TAB)           		LTAP(UPPER, BSPC)  	    &kp SPACE   			&sk SHFT
+				&sk CTRL    			MTAP(WIN, ENTER) 		LTAP(LOWER, TAB)           		LTAP(UPPER, BSPC)  	    &kp SPACE   			&sk SHFT
 			//╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
 			>;
 		};
+
 
 		// 1. LOWER
 		lower_layer {
@@ -162,6 +154,7 @@
 			>;
 		};
 
+
 		// 2. UPPER
 		upper_layer {
 			bindings = <
@@ -180,6 +173,7 @@
 			//╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
 			>;
 		};
+
 
 		// 3. FUNCT: Function Layer
 		function_layer {
