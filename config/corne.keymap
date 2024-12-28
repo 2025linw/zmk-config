@@ -38,7 +38,7 @@
 #define LTAP(layer, key) &lt layer key
 #define MTAP(mod, key) &mt mod key
 
-// Macro for volumn
+// Macro for volume
 #define VOL_UP C_VOL_UP
 #define VOL_DN C_VOL_DN
 
@@ -59,12 +59,22 @@
 		};
 	};
 
-	conditional_layers {
-		compatible = "zmk,conditional-layers";
+	// conditional_layers {
+	// 	compatible = "zmk,conditional-layers";
 
-		both_layer {
-			if-layers = <LOWER UPPER>;
-			then-layer = <BOTH>;
+	// 	both_layer {
+	// 		if-layers = <LOWER UPPER>;
+	// 		then-layer = <BOTH>;
+	// 	};
+	// };
+
+	combos {
+		compatible = "zmk,combos";
+		combo_jk_esc {
+			timeout-ms = <50>;
+			key-positions = <19 20>;
+			bindings = <&kp ESC>;
+			layers = <0>;
 		};
 	};
 
@@ -171,7 +181,7 @@
 			>;
 		};
 
-		// 3. FUNC: Function Layer
+		// 3. FUNCT: Function Layer
 		function_layer {
 			bindings = <
 			//╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
