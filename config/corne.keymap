@@ -162,11 +162,11 @@
             //│  ⎕        │  Del      │  ⎕        │  _        │  +        │  PgUp     │       │  ⎕        │  ⎕        │  Up       │  \        │  |        │  ⎕        │
                 &trans      &kp DEL     &trans      &kp UNDER   &kp PLUS    &kp PG_UP	        &trans   	&trans     	&kp UP   	&kp BSLH  	&kp PIPE    &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-            //│  ⎕        │  Home     │  End      │  -        │  =      ⍞ │  PgDn     │       │  ⎕        │  Left   ⍞ │  Down     │  Right    │  Menu     │  ⎕        │
-                &trans      &kp HOME    &kp END     &kp MINUS   &kp EQUAL   &kp PG_DN   	    &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &trans
+            //│  ⎕        │  Home     │  End      │  -        │  =      ⍞ │  PgDn     │       │  ⎕        │  Left   ⍞ │  Down     │  Right    │  Menu     │  VolUp    │
+                &trans      &kp HOME    &kp END     &kp MINUS   &kp EQUAL   &kp PG_DN   	    &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &kp VOL_UP
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-            //│  ⎕        │  <        │  >        │  Copy     │  Paste    │  ;        │       │  Play     │  Prev     │  Next     │  VolDn    │  VolUp    │  ⎕        │
-                &trans  	&kp LT 		&kp GT   	&kp LC(C)   &kp LC(V)   &kp SEMI	        &kp C_PLAY  &kp C_PREV  &kp C_NEXT	&kp VOL_DN  &kp VOL_UP	&trans
+            //│  ⎕        │  <        │  >        │  Copy     │  Paste    │  ;        │       │  ⎕        │  Prev     │  Play     │  Next     │  ⎕        │  VolDn    │
+                &trans  	&kp LT 		&kp GT   	&kp LC(C)   &kp LC(V)   &kp SEMI	        &trans		&kp C_PREV  &kp C_PLAY  &kp C_NEXT	&trans		&kp VOL_DN
             //├───────────┴───────────┼───────────┴───────────┼───────────────────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  Esc                  │  ⎕                    │  Tab                  │       │  ⌻                    │  ⎕                    │  ⎕                    │
                 &kp ESC 				&trans      			&kp TAB                         &trans  	            &trans      			&trans
