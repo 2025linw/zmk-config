@@ -118,16 +118,16 @@
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //│  Tab      │  Q        │  W        │  E        │  R        │  T        │       │  Y        │  U        │  I        │  O        │  P        │  Del      │
-                &kp TAB    	&kp Q      	&kp W      	&kp E      	&kp R      	&kp T       		&kp Y      	&kp U      	&kp I      	&kp O      	&kp P      	&kp DEL
+                &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y       &kp U       &kp I       &kp O       &kp P       &kp DEL
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  Alt      │  A        │  S        │  D        │  F      ⍞ │  G        │       │  H        │  J      ⍞ │  K        │  L        │  '        │  Alt      │
-                &sk ALT    	&kp A      	&kp S      	&kp D      	&kp F       &kp G           	&kp H      	&kp J       &kp K      	&kp L      	&kp SQT   	&sk ALT
+                &sk ALT     &kp A       &kp S       &kp D       &kp F       &kp G               &kp H       &kp J       &kp K       &kp L       &kp SQT     &sk ALT
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  Shift    │  Z        │  X        │  C        │  V        │  B        │       │  N        │  M        │  ,        │  .        │  /        │  Func   ⌺ │
-                &sk SHFT  	&kp Z      	&kp X      	&kp C      	&kp V      	&kp B           	&kp N      	&kp M      	&kp COMMA  	&kp DOT    	&kp FSLH   	&sl FUNCT
+                &sk SHFT    &kp Z       &kp X       &kp C       &kp V       &kp B               &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &sl FUNCT
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
-            //│  Ctrl     			  │  Enter                │  Tab                ⍗ │       │  BSpc               ⍐ │  Space                │  Shift                │
-                &sk CTRL    			MTAP(WIN, ENTER) 		LTAP(LOWER, TAB)           		LTAP(UPPER, BSPC)  	    &kp SPACE   			&sk SHFT
+            //│  Ctrl                 │  Enter                │  Tab                ⍗ │       │  BSpc               ⍐ │  Space                │  Shift                │
+                &sk CTRL                MTAP(WIN, ENTER)   LTAP(LOWER, TAB)             LTAP(UPPER, BSPC)       &kp SPACE      &sk SHFT
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
@@ -139,16 +139,16 @@
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //│  ⎕        │  !        │  @        │  #        │  $        │  %        │       │  ^        │  &        │  *        │  (        │  )        │  BSpc     │
-                &trans   	&kp EXCL    &kp AT   	&kp HASH    &kp DLLR    &kp PRCNT       	&kp CARET  	&kp AMPS   	&kp STAR	&kp LPAR   	&kp RPAR   	&kp BSPC
+                &trans      &kp EXCL    &kp AT      &kp HASH    &kp DLLR    &kp PRCNT           &kp CARET   &kp AMPS    &kp STAR    &kp LPAR    &kp RPAR    &kp BSPC
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  1        │  2        │  3        │  4      ⍞ │  5        │       │  6        │  7      ⍞ │  8        │  9        │  0        │  ⎕        │
-                &trans  	&kp N1      &kp N2      &kp N3  	&kp N4  	&kp N5              &kp N6  	&kp N7    	&kp N8  	&kp N9  	&kp N0  	&trans
+                &trans      &kp N1      &kp N2      &kp N3      &kp N4      &kp N5              &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  ⎕        │  ~        │  `        │  [        │  {        │       │  }        │  ]        │  ⎕        │  ⎕        │  ⎕        │  ⎕        │
-                &trans  	&trans      &kp TILDE   &kp GRAVE   &kp LBKT    &kp LBRC            &kp RBRC  	&kp RBKT   	&trans  	&trans  	&trans   	&trans
+                &trans      &trans      &kp TILDE   &kp GRAVE   &kp LBKT    &kp LBRC            &kp RBRC    &kp RBKT    &trans      &trans      &trans      &trans
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  ⎕                    │  ⎕                    │  ⌻                    │       │  BSpc                 │  ⎕                    │  :                    │
-                &trans  				&trans      			&trans             	            &kp BSPC  	            &trans      			&kp COLON
+                &trans                  &trans                  &trans                          &kp BSPC               &trans                   &kp COLON
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
@@ -160,16 +160,16 @@
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //│  ⎕        │  Del      │  ⎕        │  _        │  +        │  PgUp     │       │  ⎕        │  ⎕        │  Up       │  \        │  |        │  ⎕        │
-                &trans      &kp DEL     &trans      &kp UNDER   &kp PLUS    &kp PG_UP	        &trans   	&trans     	&kp UP   	&kp BSLH  	&kp PIPE    &trans
+                &trans      &kp DEL     &trans      &kp UNDER   &kp PLUS    &kp PG_UP           &trans      &trans      &kp UP      &kp BSLH   &kp PIPE     &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  Home     │  End      │  -        │  =      ⍞ │  PgDn     │       │  ⎕        │  Left   ⍞ │  Down     │  Right    │  Menu     │  VolUp    │
-                &trans      &kp HOME    &kp END     &kp MINUS   &kp EQUAL   &kp PG_DN   	    &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &kp VOL_UP
+                &trans      &kp HOME    &kp END     &kp MINUS   &kp EQUAL   &kp PG_DN           &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &kp VOL_UP
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  <        │  >        │  Copy     │  Paste    │  ;        │       │  ⎕        │  Prev     │  Play     │  Next     │  ⎕        │  VolDn    │
-                &trans  	&kp LT 		&kp GT   	&kp LC(C)   &kp LC(V)   &kp SEMI	        &trans		&kp C_PREV  &kp C_PLAY  &kp C_NEXT	&trans		&kp VOL_DN
+                &trans      &kp LT      &kp GT      &kp LC(C)   &kp LC(V)   &kp SEMI            &trans      &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &trans      &kp VOL_DN
             //├───────────┴───────────┼───────────┴───────────┼───────────────────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  Esc                  │  ⎕                    │  Tab                  │       │  ⌻                    │  ⎕                    │  ⎕                    │
-                &kp ESC 				&trans      			&kp TAB                         &trans  	            &trans      			&trans
+                &kp ESC                 &trans                  &kp TAB                         &trans                  &trans                  &trans
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
@@ -181,16 +181,16 @@
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //│  ⎕        │  F1       │  F2       │  F3       │  F4       │  F5       │       │  F6       │  F7       │  F8       │  F9       │  F10      │  BtClr    │
-                &trans     &kp F1    	&kp F2      &kp F3      &kp F4      &kp F5   	        &kp F6      &kp F7   	&kp F8   	&kp F9  	&kp F10     &bt BT_CLR
+                &trans     &kp F1       &kp F2      &kp F3      &kp F4      &kp F5              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &bt BT_CLR
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  F11      │  F12      │  ⎕        │  ⎕      ⍞ │  ⎕        │       │  ⎕        │  Bt 0   ⍞ │  Bt 1     │  Bt 2     │  ⎕        │  ⎕        │
-                &trans      &kp F11     &kp F12     &trans      &trans      &trans      	    &trans      BTSEL(0)    BTSEL(1)    BTSEL(2)    &trans      &trans
+                &trans      &kp F11     &kp F12     &trans      &trans      &trans              &trans      BTSEL(0)    BTSEL(1)    BTSEL(2)    &trans      &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  Caps     │  ⎕        │  ⎕        │  ⎕        │  ⎕        │       │  ⎕        │  ⎕        │  ⎕        │  ⎕        │  ⎕        │  ⌻        │
-                &trans  	&kp CAPS 	&trans   	&trans    	&trans   	&trans	        	&trans   	&trans    	&trans  	&trans   	&trans  	&trans
+                &trans      &kp CAPS    &trans      &trans      &trans      &trans              &trans      &trans      &trans      &trans      &trans      &trans
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  ⎕                    │  ⎕                    │  Tab                  │       │  BSpc                 │  ⎕                    │  Gaming               │
-                &trans 	    			&trans      			&kp TAB           	            &kp BSPC  	            &trans      			&to GAMNG
+                &trans                  &trans                  &kp TAB                         &kp BSPC                &trans                  &to GAMNG
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
@@ -201,16 +201,16 @@
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
             //│  Tab      │  Q        │  W        │  E        │  R        │  T        │       │  Y        │  U        │  I        │  O        │  P        │  ⎕        │
-                &kp TAB     &kp Q      	&kp W      	&kp E      	&kp R      	&kp T       		&kp Y      	&kp U      	&kp I      	&kp O      	&kp P       &trans
+                &kp TAB     &kp Q       &kp W       &kp E       &kp R       &kp T               &kp Y       &kp U       &kp I       &kp O       &kp P       &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  Shift    │  A        │  S        │  D        │  F      ⍞ │  G        │       │  H        │  J      ⍞ │  K        │  L        │  '        │  ⎕        │
-                &kp SHFT    &kp A      	&kp S      	&kp D      	&kp F       &kp G           	&kp H      	&kp J       &kp K      	&kp L      	&kp SQT     &trans
+                &kp SHFT    &kp A       &kp S       &kp D       &kp F       &kp G               &kp H       &kp J       &kp K       &kp L       &kp SQT     &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  Ctrl     │  Z        │  X        │  C        │  V        │  B        │       │  N        │  M        │  ,        │  .        │  /        │  ⎕        │
-                &kp CTRL 	&kp Z      	&kp X      	&kp C      	&kp V      	&kp B           	&kp N      	&kp M      	&kp COMMA  	&kp DOT    	&kp FSLH 	&trans
+                &kp CTRL    &kp Z       &kp X       &kp C       &kp V       &kp B               &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &trans
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  Ctrl                 │  Space                │  Enter                │       │  ⎕                    │  ⎕                    │  Base                 │
-                &kp CTRL    			&kp SPACE  			    &kp ENTER       	            &trans  	            &trans      			&to BASE
+                &kp CTRL                &kp SPACE               &kp ENTER                       &trans                  &trans                  &to BASE
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
