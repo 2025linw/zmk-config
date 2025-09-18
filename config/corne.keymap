@@ -159,11 +159,11 @@
             label = "Upper";
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
-            //│  ⎕        │  Del      │  ⎕        │  _        │  +        │  PgUp     │       │  ⎕        │  ⎕        │  Up       │  \        │  |        │  ⎕        │
-                &trans      &kp DEL     &trans      &kp UNDER   &kp PLUS    &kp PG_UP           &trans      &trans      &kp UP      &kp BSLH   &kp PIPE     &trans
+            //│  ⎕        │  Del      │  ⎕        │  _        │  =        │  PgUp     │       │  ⎕        │  ⎕        │  Up       │  \        │  |        │  ⎕        │
+                &trans      &kp DEL     &trans      &kp UNDER   &kp EQUAL   &kp PG_UP           &trans      &trans      &kp UP      &kp BSLH   &kp PIPE     &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-            //│  ⎕        │  Home     │  End      │  -        │  =      ⍞ │  PgDn     │       │  ⎕        │  Left   ⍞ │  Down     │  Right    │  Menu     │  VolUp    │
-                &trans      &kp HOME    &kp END     &kp MINUS   &kp EQUAL   &kp PG_DN           &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &kp VOL_UP
+            //│  ⎕        │  Home     │  End      │  -        │  +      ⍞ │  PgDn     │       │  ⎕        │  Left   ⍞ │  Down     │  Right    │  Menu     │  VolUp    │
+                &trans      &kp HOME    &kp END     &kp MINUS   &kp PLUS    &kp PG_DN           &trans      &kp LEFT    &kp DOWN    &kp RIGHT   &kp K_APP   &kp VOL_UP
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
             //│  ⎕        │  <        │  >        │  Copy     │  Paste    │  ;        │       │  ⎕        │  Prev     │  Play     │  Next     │  ⎕        │  VolDn    │
                 &trans      &kp LT      &kp GT      &kp LC(C)   &kp LC(V)   &kp SEMI            &trans      &kp C_PREV  &kp C_PLAY  &kp C_NEXT  &trans      &kp VOL_DN
@@ -183,11 +183,11 @@
             //│  ⎕        │  F1       │  F2       │  F3       │  F4       │  F5       │       │  F6       │  F7       │  F8       │  F9       │  F10      │  BtClr    │
                 &trans     &kp F1       &kp F2      &kp F3      &kp F4      &kp F5              &kp F6      &kp F7      &kp F8      &kp F9      &kp F10     &bt BT_CLR
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-            //│  ⎕        │  F11      │  F12      │  ⎕        │  ⎕      ⍞ │  ⎕        │       │  ⎕        │  Bt 0   ⍞ │  Bt 1     │  Bt 2     │  ⎕        │  ⎕        │
-                &trans      &kp F11     &kp F12     &trans      &trans      &trans              &trans      BTSEL(0)    BTSEL(1)    BTSEL(2)    &trans      &trans
+            //│  ⎕        │  F11      │  F12      │  ⎕        │  ⎕      ⍞ │  ⎕        │       │  ⎕        │  Bt 1   ⍞ │  Bt 2     │  Bt 3     │  Bt 4     │  ⎕        │
+                &trans      &kp F11     &kp F12     &trans      &trans      &trans              &trans      BTSEL(0)    BTSEL(1)    BTSEL(2)    BTSEL(3)    &trans
             //├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤       ├───────────┼───────────┼───────────┼───────────┼───────────┼───────────┤
-            //│  ⎕        │  Caps     │  ⎕        │  ⎕        │  ⎕        │  ⎕        │       │  ⎕        │  ⎕        │  ⎕        │  ⎕        │  ⎕        │  ⌻        │
-                &trans      &kp CAPS    &trans      &trans      &trans      &trans              &trans      &trans      &trans      &trans      &trans      &trans
+            //│  ⎕        │  Caps     │  ⎕        │  ⎕        │  ⎕        │  ⎕        │       │  ⎕        │  Bt 5     │  ⎕        │  ⎕        │  ⎕        │  ⌻        │
+                &trans      &kp CAPS    &trans      &trans      &trans      &trans              &trans      BTSEL(4)    &trans      &trans      &trans      &trans
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  ⎕                    │  ⎕                    │  Tab                  │       │  BSpc                 │  ⎕                    │  Gaming               │
                 &trans                  &trans                  &kp TAB                         &kp BSPC                &trans                  &to GAMNG
