@@ -19,10 +19,10 @@
 ---
 include:
   # This is for the Corne MX
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: corne_dongle prospector_adapter
     artifact-name: corne_mx_dongle
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
 
   - board: nice_nano
