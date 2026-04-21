@@ -39,6 +39,11 @@
 #define VOL_UP C_VOL_UP
 #define VOL_DN C_VOL_DN
 
+// Add serial peripheral interface (SPI)
+nice_view_spi: &spi0 {
+    cs-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;
+};
+
 / {
     behaviors {
         td_c_c: tap_dance_command_control {
