@@ -26,11 +26,11 @@ include:
     shield: settings_reset
 
   - board: nice_nano
-    shield: corne_left nice_view_adapter nice_view
+    shield: corne_left nice_view_adapter nice_view_gem
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: corne_mx_left
   - board: nice_nano
-    shield: corne_right nice_view_adapter nice_view
+    shield: corne_right nice_view_adapter nice_view_gem
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: corne_mx_right
   - board: nice_nano
