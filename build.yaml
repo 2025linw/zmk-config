@@ -27,7 +27,7 @@ include:
     shield: corne_right nice_view_adapter nice_view_gem
     artifact-name: corne_mx_right
   - board: xiao_ble//zmk
-    shield: corne_dongle prospector_adapter
+    shield: prospector_adapter
     artifact-name: corne_mx_dongle
 
   # This is for the Corne LP
