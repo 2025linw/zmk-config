@@ -2,12 +2,18 @@ if SHIELD_CORNE_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "Corne MX"
+    default "Corne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 config ZMK_SPLIT
+    default y
+
+config ZMK_USB
+    default y
+
+config ZMK_BLE
     default y
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
@@ -18,5 +24,16 @@ config BT_MAX_CONN
 
 config BT_MAX_PAIRED
     default 2
+
+endif
+
+
+if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+config ZMK_BLE
+    default y
 
 endif
