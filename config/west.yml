@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: carrefinho # center dongle
+      url-base: https://github.com/carrefinho # center dongle
     - name: m165437 # new nice view
       url-base: https://github.com/M165437 # new nice view
   projects:
@@ -9,6 +11,9 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: feat/new-status-screens
     - name: nice-view-gem
       remote: m165437
       revision: main
