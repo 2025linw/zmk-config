@@ -18,7 +18,6 @@
 #
 ---
 include:
-  # This is for the Corne MX
   - board: seeeduino_xiao_ble
     shield: corne_dongle prospector_adapter
     artifact-name: corne_mx_dongle
@@ -26,22 +25,12 @@ include:
     shield: settings_reset
 
   - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: corne_left nice_view_adapter nice_view
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: corne_mx_left
   - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_gem
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    shield: corne_right nice_view_adapter nice_view
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: corne_mx_right
   - board: nice_nano_v2
     shield: settings_reset
-
-
-  # This is for the Corne LP
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_gem
-    cmake-args: -D'CONFIG_ZMK_KEYBOARD_NAME="Corne LP"'
-    artifact-name: corne_lp_left
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_gem
-    artifact-name: corne_lp_right
