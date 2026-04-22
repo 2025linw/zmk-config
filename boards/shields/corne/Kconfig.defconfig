@@ -28,17 +28,6 @@ config BT_MAX_PAIRED
 config ZMK_DISPLAY
     default y
 
-
-# Prospector Dongle Specific
-config PROSPECTOR_USE_AMBIENT_LIGHT_SENSOR
-    default n
-config PROSPECTOR_FIXED_BRIGHTNESS
-    default 80
-config PROSPECTOR_LAYER_NAME_UPPERCASE
-    default y
-config PROSPECTOR_ANIMATION_WPM_REFERENCE
-    default 120
-
 endif
 
 
