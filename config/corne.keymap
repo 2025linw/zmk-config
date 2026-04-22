@@ -121,7 +121,7 @@ debug_layer {
 };
 
         // 0. BASE: Base Layer
-        default_layer {
+        base {
             display-name = "Base";
 
             bindings = <
@@ -143,7 +143,7 @@ debug_layer {
 
 
         // 1. LOWER
-        lower_layer {
+        lower {
             display-name = "Lower";
 
             bindings = <
@@ -165,7 +165,7 @@ debug_layer {
 
 
         // 2. UPPER
-        upper_layer {
+        upper {
             display-name = "Upper";
 
             bindings = <
@@ -187,8 +187,8 @@ debug_layer {
 
 
         // 3. FUNCT: Function Layer
-        function_layer {
-            display-name = "Func";
+        function {
+            display-name = "Function";
 
             bindings = <
             //╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮       ╭───────────┬───────────┬───────────┬───────────┬───────────┬───────────╮
@@ -208,7 +208,7 @@ debug_layer {
         };
 
         // 4. GAMNG: Gaming Layer
-        gaming_layer {
+        game {
             display-name = "Game";
 
             bindings = <

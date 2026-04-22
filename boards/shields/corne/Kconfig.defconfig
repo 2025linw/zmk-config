@@ -4,17 +4,30 @@ if SHIELD_CORNE_DONGLE
 config ZMK_KEYBOARD_NAME
     default "Corne"
 
-
+config ZMK_SPLIT
+    default y
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 # Dongle Connection Settings
+config ZMK_USB
+    default y
+
+
+config ZMK_BLE
+    default y
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 config BT_MAX_CONN
     default 3
 config BT_MAX_PAIRED
     default 3
+
+
+# Display Settings
+config ZMK_DISPLAY
+    default y
+
 
 # Prospector Dongle Specific
 config PROSPECTOR_USE_AMBIENT_LIGHT_SENSOR
@@ -29,18 +42,13 @@ config PROSPECTOR_ANIMATION_WPM_REFERENCE
 endif
 
 
-if SHIELD_CORNE_DONGLE || SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
-
-config ZMK_DISPLAY
-    default y
+if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 
 config ZMK_SPLIT
-	default y
+    default y
 
-endif
-
-
-if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
+config ZMK_BLE
+    default y
 
 config ZMK_KSCAN_DEBOUNCE_PRESS_MS
     default 5
