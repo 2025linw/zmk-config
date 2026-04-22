@@ -22,7 +22,7 @@
 
     kscan0: kscan {
         diode-direction = "col2row";
-    }
+    };
 
     corne_6col_layout: corne_6col_layout {
         compatible = "zmk,physical-layout";
