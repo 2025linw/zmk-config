@@ -13,7 +13,7 @@ manifest:
       import: app/west.yml
     - name: prospector-zmk-module
       remote: carrefinho
-      revision: core/zephyr-4-1
+      revision: feat/new-status-screens
     - name: nice-view-gem
       remote: m165437
       revision: main
