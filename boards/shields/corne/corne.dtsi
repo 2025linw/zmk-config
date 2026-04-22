@@ -5,7 +5,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,physical-layout = &corne_6col_layout;
-    }
+    };
 
      default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
@@ -29,8 +29,7 @@
         display-name = "6-column";
 
         transform = <&default_transform>;
-    }
-
+    };
 
     corne_position_map {
         compatible = "zmk,physical-layout-position-map";
@@ -46,5 +45,5 @@
                 , <         36 37 38 39 40 41         >
                 ;
         };
-};
+    };
 }
