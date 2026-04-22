@@ -24,13 +24,6 @@
         diode-direction = "col2row";
     };
 
-    corne_6col_layout: corne_6col_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "6 Column";
-
-        transform = <&default_transform>;
-    };
-
     corne_position_map {
         compatible = "zmk,physical-layout-position-map";
 
@@ -50,6 +43,8 @@
     corne_6col_layout: corne_6col_layout {
         compatible = "zmk,physical-layout";
         display-name = "6 Column";
+
+        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   37       0     0     0>
@@ -94,6 +89,6 @@
             , <&key_physical_attrs 100 150  752  283  (-2400)  852   433>
             , <&key_physical_attrs 100 100  850  312  (-1200)  950   412>
             , <&key_physical_attrs 100 100  950  312       0     0     0>
-        ;
+            ;
     };
 };
