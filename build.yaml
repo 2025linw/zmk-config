@@ -18,6 +18,16 @@
 #
 ---
 include:
+  # Non-dongle
+  - board: nice_nano_v2
+    shield: corne_left nice_view_adapter nice_view_gem
+    artifact-name: corne_left
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1
+  - board: nice_nano_v2
+    shield: corne_right nice_view_adapter nice_view_gem
+    artifact-name: corne_right
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1
+
   # Dongle
   - board: seeeduino_xiao_ble
     shield: corne_dongle prospector_adapter
