@@ -28,7 +28,7 @@
         compatible = "zmk,physical-layout";
         display-name = "6 Column";
 
-        transform = "&default_transform>
+        transform = <&default_transform>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   37       0     0     0>
@@ -83,7 +83,7 @@
 
         corne_6col_position_map: twelve {
             physical-layout = <&default_layout>;
-            
+
             positions
                 = < 0  1  2  3  4  5  6  7  8  9 10 11>
                 , <12 13 14 15 16 17 18 19 20 21 22 23>
