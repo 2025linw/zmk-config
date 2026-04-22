@@ -22,7 +22,7 @@ include:
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view_gem
     artifact-name: corne_left
-    cmake-args: -DCONFIG_BT_MAX_CONN=2 -DCONFIG_BT_MAX_PAIRED=2
+    cmake-args: -DCONFIG_BT_MAX_CONN=6 -DCONFIG_BT_MAX_PAIRED=6
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view_gem
     artifact-name: corne_right
