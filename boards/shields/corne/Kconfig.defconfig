@@ -34,10 +34,6 @@ if SHIELD_CORNE_DONGLE || SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 config ZMK_DISPLAY
     default y
 
-config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
-    default y
-
-
 config ZMK_SPLIT
 	default y
 
