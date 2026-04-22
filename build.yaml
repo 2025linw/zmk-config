@@ -37,11 +37,11 @@ include:
 
   # Dongle + Split w View
   - board: nice_nano//zmk
-    shield: corne_left nice_view_adapter nice_view
+    shield: corne_left nice_view_adapter nice_view_gem
     artifact-name: corne_left_with_view_dongle
     cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano//zmk
-    shield: corne_right nice_view_adapter nice_view
+    shield: corne_right nice_view_adapter nice_view_gem
     artifact-name: corne_right_with_view_dongle
     cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 

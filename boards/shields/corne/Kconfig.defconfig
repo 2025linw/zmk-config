@@ -8,7 +8,7 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-
+# Dongle Connection Settings
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 config BT_MAX_CONN
@@ -16,11 +16,55 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 3
 
+# Prospector Dongle Specific
+config PROSPECTOR_USE_AMBIENT_LIGHT_SENSOR
+    default n
+config PROSPECTOR_FIXED_BRIGHTNESS
+    default 80
+config PROSPECTOR_LAYER_NAME_UPPERCASE
+    default y
+config PROSPECTOR_ANIMATION_WPM_REFERENCE
+    default 120
+
 endif
+
 
 if SHIELD_CORNE_DONGLE || SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
 
+config ZMK_DISPLAY
+    default y
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+    default y
+
+
 config ZMK_SPLIT
 	default y
+
+endif
+
+
+if SHIELD_CORNE_LEFT || SHIELD_CORNE_RIGHT
+
+config ZMK_KSCAN_DEBOUNCE_PRESS_MS
+    default 5
+config ZMK_KSCAN_DEBOUNCE_RELEASE_MS
+    default 5
+
+endif
+
+
+if SHIELD_NICEVIEW_GEM
+
+config NICE_VIEW_GEM_WPM_FIXED_RANGE
+    default y
+config NICE_VIEW_GEM_WPM_FIXED_RANGE_MAX
+    default 120
+config NICE_VIEW_GEM_ANIMATION
+    default n
+# config NICE_VIEW_GEM_ANIMATION_FRAME
+#     default 1
+# config NICE_VIEW_GEM_ANIMATION_MS
+#     default 960
 
 endif
