@@ -18,42 +18,35 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_gem
-    artifact-name: corne_left
-    cmake-args: -DCONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_gem
-    artifact-name: corne_right
-    cmake-args: -DCONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM=y
-
-  - board: nice_nano_v2
-    shield: corne_left
-    artifact-name: corne_left_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: corne_right
-    artifact-name: corne_right_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view
-    artifact-name: corne_left_view_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view
-    artifact-name: corne_right_view_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
-
-  - board: nice_nano_v2
-    shield: settings_reset
-
-  - board: seeeduino_xiao_ble
+  # Dongle
+  - board: xiao_ble
     shield: corne_dongle prospector_adapter
     artifact-name: corne_dongle
     snippet: studio-rpc-usb-uart
-    # cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
 
-  - board: seeeduino_xiao_ble
+  # Dongle + Split wo View
+  - board: nice_nano
+    shield: corne_left
+    artifact-name: corne_left_with_dongle
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nice_nano
+    shield: corne_right
+    artifact-name: corne_right_with_dongle
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  # Dongle + Split w View
+  - board: nice_nano
+    shield: corne_left nice_view_adapter nice_view
+    artifact-name: corne_left_with_view_dongle
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: nice_nano
+    shield: corne_right nice_view_adapter nice_view
+    artifact-name: corne_right_with_view_dongle
+    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+
+  # Setting resets
+  - board: xiao_ble
+    shield: settings_reset
+  - board: nice_nano
     shield: settings_reset
