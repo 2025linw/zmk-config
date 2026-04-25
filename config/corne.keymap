@@ -178,7 +178,7 @@
         };
 
 
-        // 3. FUNCT: Function Layer
+        // 3. FUNC: Function Layer
         function {
             display-name = "Function";
 
@@ -194,7 +194,7 @@
                 &trans      &kp CAPS    &trans      &trans      &trans      &trans              &trans      BTSEL(4)    &trans      &trans      &trans      &trans
             //├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤       ├───────────┴───────────┼───────────┴───────────┼───────────┴───────────┤
             //│  ⎕                    │  ⎕                    │  Tab                  │       │  BSpc                 │  ⎕                    │  Gaming               │
-                &trans                  &trans                  &kp TAB                         &kp BSPC                &trans                  &to GAMNG
+                &studio_unlock          &trans                  &kp TAB                         &kp BSPC                &trans                  &to GAMNG
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
