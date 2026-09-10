@@ -1,0 +1,7 @@
+file_format: "1"
+id: toucan_pet
+name: Toucan Pet
+type: shield
+requires: [nice_view_header]
+features:
+  - display
