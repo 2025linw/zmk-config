@@ -18,42 +18,24 @@
 #
 ---
 include:
-  # Non-dongle
+  # Corne
   - board: nice_nano_v2
     shield: corne_left nice_view_adapter nice_view_gem
     artifact-name: corne_left
-    cmake-args: -DCONFIG_BT_MAX_CONN=6 -DCONFIG_BT_MAX_PAIRED=6
   - board: nice_nano_v2
     shield: corne_right nice_view_adapter nice_view_gem
     artifact-name: corne_right
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1
 
-  # Dongle
+  # Toucan2 + Dongle
   - board: seeeduino_xiao_ble
-    shield: corne_dongle prospector_adapter
-    artifact-name: corne_dongle
+    shield: toucan_dongle rgbled_adapter prospector_adapter
+    artifact-name: toucan_dongle
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-
-  # Dongle + Split wo View
-  - board: nice_nano_v2
-    shield: corne_left
-    artifact-name: corne_left_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: corne_right
-    artifact-name: corne_right_with_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-
-  # Dongle + Split w View
-  - board: nice_nano_v2
-    shield: corne_left nice_view_adapter nice_view_gem
-    artifact-name: corne_left_with_view_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-  - board: nice_nano_v2
-    shield: corne_right nice_view_adapter nice_view_gem
-    artifact-name: corne_right_with_view_dongle
-    cmake-args: -DCONFIG_BT_MAX_CONN=1 -DCONFIG_BT_MAX_PAIRED=1 -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+  - board: seeeduino_xiao_ble
+    shield: toucan_left rgbled_adapter toucan_pet
+  - board: seeeduino_xiao_ble
+    shield: toucan_right rgbled_adapter
 
   # Setting resets
   - board: seeeduino_xiao_ble

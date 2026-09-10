@@ -1,0 +1,56 @@
+if SHIELD_TOUCAN_DONGLE
+    # Max 16 characters in keyboard name
+    config ZMK_KEYBOARD_NAME
+        default "Toucan"
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+
+    config ZMK_SPLIT
+        default y
+
+    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+        default 2
+
+    config BT_MAX_CONN
+        default 5
+
+    config BT_MAX_PAIRED
+        default 5
+endif
+
+
+
+if SHIELD_TOUCAN_LEFT
+    config ZMK_KEYBOARD_NAME
+        default "Toucan"
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default n
+
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_FETCHING
+        default n
+
+    config ZMK_SPLIT_BLE_CENTRAL_BATTERY_LEVEL_PROXY
+        default n
+endif
+
+
+
+IF SHIELD_TOUCAN_DONGLE || SHIELD_TOUCAN_RIGHT
+    config ZMK_POINTING
+        default y
+endif
+
+
+
+if SHIELD_TOUCAN_LEFT || SHIELD_TOUCAN_RIGHT
+    config SPI
+        default y
+
+    config ZMK_SPLIT
+        default y
+
+    config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
+        default 40
+endif
