@@ -1,7 +1,9 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/matrix_transform.h>
+
 #include "toucan-layouts.dtsi"
+
 #include "toucan.dtsi"
 
 &physical_layout0 {
