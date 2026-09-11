@@ -34,8 +34,10 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   - board: seeeduino_xiao_ble
     shield: toucan_left rgbled_adapter toucan_pet
+    artifact-name: toucan_left
   - board: seeeduino_xiao_ble
     shield: toucan_right rgbled_adapter
+    artifact-name: toucan_right
 
   # Setting resets
   - board: seeeduino_xiao_ble
