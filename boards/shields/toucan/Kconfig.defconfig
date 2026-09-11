@@ -16,10 +16,10 @@ if SHIELD_TOUCAN_DONGLE
         default 2
 
     config BT_MAX_CONN
-        default 2
+        default 3
 
     config BT_MAX_PAIRED
-        default 2
+        default 3
 
     config PROSPECTOR_USE_AMBIENT_LIGHT_SENSOR
         default n
