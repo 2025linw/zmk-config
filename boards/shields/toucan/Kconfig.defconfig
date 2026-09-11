@@ -60,23 +60,8 @@ if SHIELD_TOUCAN_LEFT || SHIELD_TOUCAN_RIGHT
     config SPI
         default y
 
-    config ZMK_BATTERY_REPORTING
-        default y
-
-    config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
-        default 40
-
     config ZMK_SPLIT
         default y
-
-    config ZMK_SLEEP
-        default y
-
-    config ZMK_IDLE_SLEEP_TIMEOUT
-        default 3600000
-
-    config ZMK_IDLE_TIMEOUT
-        default 30000
 
     config ZMK_PM_SOFT_OFF
         default y

@@ -1,8 +1,10 @@
 config SHIELD_TOUCAN_DONGLE
     def_bool $(shields_list_contains,toucan_dongle)
 
+
 config SHIELD_TOUCAN_LEFT
     def_bool $(shields_list_contains,toucan_left)
+
 
 config SHIELD_TOUCAN_RIGHT
     def_bool $(shields_list_contains,toucan_right)
