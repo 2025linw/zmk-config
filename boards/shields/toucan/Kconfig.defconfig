@@ -40,9 +40,6 @@ endif
 if SHIELD_TOUCAN_DONGLE || SHIELD_TOUCAN_RIGHT
     config ZMK_POINTING
         default y
-
-    config ZMK_SPLIT_INPUT
-        default y
 endif
 
 
