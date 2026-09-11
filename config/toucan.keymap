@@ -7,9 +7,9 @@
 
 // Basic Layers
 #define BASE 0
-#define NAV  1
-#define SYM  2
-#define ADJ  3
+#define LOWER 1
+#define UPPER 2
+#define FUNCT  3
 
 // Shift and Control Key Shortened
 #define SHFT LSHFT
@@ -170,7 +170,7 @@
         };
 
 
-        // 3. FUNC: Function Layer
+        // 3. FUNCT
         function {
             display-name = "FUNC";
 
