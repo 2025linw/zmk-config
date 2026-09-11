@@ -190,16 +190,5 @@
             //╰───────────────────────┴───────────────────────┴───────────────────────╯       ╰───────────────────────┴───────────────────────┴───────────────────────╯
             >;
         };
-
-        mouse {
-            display-name = "MOUSE";
-
-            bindings = <
-                &trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans &trans
-                            &mkp MCLK &mkp LCLK &mkp RCLK           &mkp LCLK &mkp RCLK &mkp MCLK
-            >;
-        };
     };
 };
